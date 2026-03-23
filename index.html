@@ -4,33 +4,52 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>The Honest Shelf — Free Weight Loss Guide</title>
+
+<!-- Google Analytics — correctly placed after meta tags -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-YEK7GVX4P9"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-YEK7GVX4P9');
+</script>
+
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
 <style>
   :root {
     --yellow: #FFD700;
-    --yellow-dim: #C9A84C;
+    --yellow-dim: #F0C040;
     --bg: #0E0E0D;
-    --bg2: #161615;
-    --bg3: #1C1C1A;
-    --border: rgba(255,255,255,0.06);
-    --text: #EAE6DA;
-    --muted: #7A7670;
+    --bg2: rgba(0,0,0,0.6);
+    --bg3: rgba(0,0,0,0.7);
+    --border: rgba(255,255,255,0.18);
+    --text: #FFFFFF;
+    --muted: #EDE8E0;
   }
 
   * { margin: 0; padding: 0; box-sizing: border-box; }
   html { scroll-behavior: smooth; }
 
   body {
-    background: var(--bg);
-    color: var(--text);
+    background: linear-gradient(270deg, #6B2D7E, #A855A8, #D8B5E8, #8D3DA5);
+    background-size: 400% 400%;
+    animation: gradientShift 15s ease infinite;
+    background-attachment: fixed;
+    color: #FFFFFF;
     font-family: 'DM Sans', sans-serif;
-    font-weight: 300;
+    font-weight: 500;
     line-height: 1.8;
     overflow-x: hidden;
     min-height: 100vh;
+    text-shadow: 0 1px 4px rgba(0,0,0,0.5);
   }
 
-  /* Grain */
+  @keyframes gradientShift {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+  }
+
   body::after {
     content: '';
     position: fixed;
@@ -40,9 +59,6 @@
     z-index: 9999;
   }
 
-  /* ===================== */
-  /* STEP 1 — EMAIL GATE   */
-  /* ===================== */
   #step-1 {
     min-height: 100vh;
     display: flex;
@@ -54,7 +70,6 @@
     position: relative;
   }
 
-  /* Subtle radial glow behind hero */
   #step-1::before {
     content: '';
     position: absolute;
@@ -124,12 +139,13 @@
 
   h1 {
     font-family: 'Playfair Display', serif;
-    font-size: clamp(2rem, 6vw, 3.4rem);
+    font-size: clamp(2.6rem, 7vw, 4.2rem);
     font-weight: 900;
-    line-height: 1.12;
+    line-height: 1.1;
     letter-spacing: -0.02em;
     margin-bottom: 1.2rem;
-    color: var(--text);
+    color: #FFFFFF;
+    text-shadow: 0 2px 20px rgba(0,0,0,0.6);
   }
 
   h1 em {
@@ -138,14 +154,15 @@
   }
 
   .hero-sub {
-    font-size: 1rem;
-    color: var(--muted);
+    font-size: 1.1rem;
+    color: #FFFFFF;
     max-width: 460px;
     margin: 0 auto 2.5rem;
     line-height: 1.75;
+    font-weight: 500;
+    text-shadow: 0 1px 8px rgba(0,0,0,0.5);
   }
 
-  /* Email form */
   .email-form {
     display: flex;
     flex-direction: column;
@@ -198,17 +215,9 @@
     gap: 6px;
   }
 
-  .submit-btn:hover {
-    background: #fff;
-  }
-
-  .submit-btn svg {
-    transition: transform 0.2s;
-  }
-
-  .submit-btn:hover svg {
-    transform: translateX(3px);
-  }
+  .submit-btn:hover { background: #fff; }
+  .submit-btn svg { transition: transform 0.2s; }
+  .submit-btn:hover svg { transform: translateX(3px); }
 
   .form-note {
     font-size: 0.72rem;
@@ -220,7 +229,6 @@
     gap: 6px;
   }
 
-  /* Social proof strip */
   .proof-strip {
     margin-top: 3.5rem;
     display: flex;
@@ -246,10 +254,12 @@
   }
 
   .proof-label {
-    font-size: 0.7rem;
-    color: var(--muted);
+    font-size: 0.8rem;
+    color: #FFFFFF;
     letter-spacing: 0.05em;
     text-align: center;
+    font-weight: 500;
+    text-shadow: 0 1px 4px rgba(0,0,0,0.4);
   }
 
   .proof-divider {
@@ -259,7 +269,6 @@
     align-self: center;
   }
 
-  /* What they get */
   .what-you-get {
     margin-top: 4rem;
     max-width: 420px;
@@ -285,11 +294,12 @@
   .wyg-item {
     display: flex;
     gap: 10px;
-    font-size: 0.85rem;
-    color: var(--muted);
+    font-size: 0.95rem;
+    color: #FFFFFF;
     padding: 0.4rem 0;
     align-items: flex-start;
     line-height: 1.5;
+    font-weight: 500;
   }
 
   .wyg-check {
@@ -299,9 +309,6 @@
     font-size: 0.8rem;
   }
 
-  /* ======================== */
-  /* STEP 2 — PRODUCT REVEAL  */
-  /* ======================== */
   #step-2 {
     display: none;
     min-height: 100vh;
@@ -318,27 +325,28 @@
     margin-bottom: 4rem;
   }
 
-  .reveal-header .badge {
-    margin-bottom: 1.5rem;
-  }
+  .reveal-header .badge { margin-bottom: 1.5rem; }
 
   .reveal-header h2 {
     font-family: 'Playfair Display', serif;
-    font-size: clamp(1.8rem, 5vw, 2.8rem);
+    font-size: clamp(2.2rem, 6vw, 3.4rem);
     font-weight: 900;
-    line-height: 1.15;
+    line-height: 1.1;
     letter-spacing: -0.02em;
     margin-bottom: 1rem;
+    color: #FFFFFF;
+    text-shadow: 0 2px 20px rgba(0,0,0,0.6);
   }
 
   .reveal-header p {
-    font-size: 0.95rem;
-    color: var(--muted);
+    font-size: 1.05rem;
+    color: #FFFFFF;
     max-width: 500px;
     margin: 0 auto;
+    font-weight: 500;
+    text-shadow: 0 1px 6px rgba(0,0,0,0.4);
   }
 
-  /* Problem blocks */
   .problem-row {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
@@ -367,16 +375,19 @@
   }
 
   .pc-title {
-    font-size: 0.82rem;
-    font-weight: 500;
-    color: var(--text);
+    font-size: 0.95rem;
+    font-weight: 700;
+    color: #FFFFFF;
     margin-bottom: 0.4rem;
+    text-shadow: 0 1px 4px rgba(0,0,0,0.4);
   }
 
   .pc-desc {
-    font-size: 0.78rem;
-    color: var(--muted);
+    font-size: 0.88rem;
+    color: #FFFFFF;
     line-height: 1.6;
+    font-weight: 500;
+    text-shadow: 0 1px 4px rgba(0,0,0,0.4);
   }
 
   .pullquote {
@@ -385,10 +396,13 @@
     margin: 2rem 0;
     font-family: 'Playfair Display', serif;
     font-style: italic;
-    font-size: 1.05rem;
-    color: var(--text);
+    font-size: 1.2rem;
+    color: #FFFFFF;
     line-height: 1.6;
-    opacity: 0.8;
+    font-weight: 700;
+    text-shadow: 0 1px 8px rgba(0,0,0,0.5);
+    background: rgba(0,0,0,0.3);
+    border-radius: 0 4px 4px 0;
   }
 
   .section-label {
@@ -401,25 +415,27 @@
 
   .section-h {
     font-family: 'Playfair Display', serif;
-    font-size: clamp(1.4rem, 3.5vw, 2rem);
+    font-size: clamp(1.8rem, 4vw, 2.6rem);
     font-weight: 700;
-    line-height: 1.25;
+    line-height: 1.2;
     margin-bottom: 1.2rem;
-    color: var(--text);
+    color: #FFFFFF;
+    text-shadow: 0 2px 12px rgba(0,0,0,0.5);
   }
 
   .body-text {
-    font-size: 0.95rem;
-    color: var(--muted);
+    font-size: 1.05rem;
+    color: #FFFFFF;
     margin-bottom: 1rem;
     line-height: 1.85;
+    font-weight: 500;
+    text-shadow: 0 1px 6px rgba(0,0,0,0.4);
   }
 
-  .body-text strong { color: var(--text); font-weight: 500; }
+  .body-text strong { color: #FFD700; font-weight: 700; }
 
   hr.div { border: none; border-top: 1px solid var(--border); margin: 3rem 0; }
 
-  /* Ingredients */
   .ingredient {
     display: grid;
     grid-template-columns: 160px 1fr;
@@ -448,14 +464,15 @@
   }
 
   .ing-desc {
-    font-size: 0.88rem;
-    color: var(--muted);
+    font-size: 0.95rem;
+    color: #FFFFFF;
     line-height: 1.7;
+    font-weight: 500;
+    text-shadow: 0 1px 4px rgba(0,0,0,0.4);
   }
 
-  .ing-desc strong { color: var(--text); font-weight: 500; }
+  .ing-desc strong { color: #FFD700; font-weight: 700; }
 
-  /* Verdict grid */
   .verdict-grid {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -481,11 +498,12 @@
   .vc-item {
     display: flex;
     gap: 8px;
-    font-size: 0.82rem;
-    color: var(--muted);
+    font-size: 0.92rem;
+    color: #FFFFFF;
     padding: 0.4rem 0;
     line-height: 1.5;
     align-items: flex-start;
+    font-weight: 500;
   }
 
   .vc-item::before {
@@ -494,7 +512,6 @@
     flex-shrink: 0;
   }
 
-  /* Final CTA */
   .final-cta {
     background: var(--bg2);
     border: 1px solid var(--border);
@@ -549,7 +566,6 @@
     gap: 6px;
   }
 
-  /* Footer */
   footer {
     border-top: 1px solid var(--border);
     padding: 2rem;
@@ -561,7 +577,73 @@
     margin: 0 auto;
   }
 
-  /* Animations */
+  @keyframes borderBeam {
+    0%   { background-position: 0% 50%; }
+    50%  { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+  }
+
+  .video-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
+    margin-bottom: 2.5rem;
+  }
+
+  .video-wrap {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .video-glow {
+    position: relative;
+    border-radius: 8px;
+    padding: 3px;
+    background: linear-gradient(270deg, #FFD700, #C9A84C, #fff6c0, #FFD700);
+    background-size: 400% 400%;
+    animation: borderBeam 3s ease infinite;
+  }
+
+  .video-inner {
+    border-radius: 6px;
+    overflow: hidden;
+    position: relative;
+    width: 100%;
+    height: 0;
+    padding-bottom: 56.25%;
+    background: #0E0E0D;
+  }
+
+  .video-inner iframe {
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    border: 0;
+  }
+
+  .video-click-text {
+    text-align: center;
+    font-size: 0.75rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: #C9A84C;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+  }
+
+  .video-click-text::before,
+  .video-click-text::after {
+    content: '';
+    display: block;
+    width: 20px;
+    height: 1px;
+    background: #C9A84C;
+    opacity: 0.5;
+  }
+
   @keyframes fadeUp {
     from { opacity: 0; transform: translateY(24px); }
     to { opacity: 1; transform: translateY(0); }
@@ -572,7 +654,6 @@
     to { opacity: 1; transform: translateY(0); }
   }
 
-  /* Mobile */
   @media (max-width: 580px) {
     .input-row { flex-direction: column; }
     .submit-btn { width: 100%; justify-content: center; padding: 1rem; }
@@ -581,40 +662,26 @@
     .verdict-grid { grid-template-columns: 1fr; }
     .ingredient { grid-template-columns: 1fr; gap: 0.5rem; }
     .final-cta { padding: 2rem 1.2rem; }
+    .video-grid { grid-template-columns: 1fr; }
   }
 </style>
 </head>
 <body>
 
-<!-- ==================== -->
-<!-- STEP 1 — EMAIL GATE  -->
-<!-- ==================== -->
 <div id="step-1">
-
   <div class="brand">The Honest Shelf</div>
-
   <div class="hero-wrap">
-
     <div class="badge">
       <span class="badge-dot"></span>
       Free Guide — No Credit Card
     </div>
-
     <h1>The Morning Coffee Trick That's Helping Thousands <em>Finally</em> Lose Weight</h1>
-
     <p class="hero-sub">Enter your email and I'll send you the free guide — plus the exact research-backed product making this possible. Takes 10 seconds.</p>
-
     <form class="email-form" onsubmit="handleSubmit(event)">
       <div class="input-row">
-        <input
-          type="email"
-          class="email-input"
-          id="email-input"
-          placeholder="Enter your best email address"
-          required
-        />
+        <input type="email" class="email-input" id="email-input" placeholder="Enter your best email address" required/>
         <button type="submit" class="submit-btn">
-          Send It Free
+          Read the Research
           <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
         </button>
       </div>
@@ -623,10 +690,8 @@
         No spam. Unsubscribe anytime. Your email is safe.
       </div>
     </form>
-
   </div>
 
-  <!-- Social proof -->
   <div class="proof-strip">
     <div class="proof-item">
       <div class="proof-num">3 Weeks</div>
@@ -649,7 +714,6 @@
     </div>
   </div>
 
-  <!-- What they get -->
   <div class="what-you-get">
     <div class="wyg-title">What you get instantly</div>
     <div class="wyg-item">
@@ -669,15 +733,9 @@
       No hype. No brand deals. Just what I actually found.
     </div>
   </div>
-
 </div>
 
-
-<!-- ========================= -->
-<!-- STEP 2 — PRODUCT REVEAL   -->
-<!-- ========================= -->
 <div id="step-2">
-
   <div class="reveal-header">
     <div class="badge">
       <span class="badge-dot"></span>
@@ -687,12 +745,10 @@
     <p>And the one morning habit that finally works with it instead of against it.</p>
   </div>
 
-  <!-- Trust image -->
   <div style="margin:0 0 2rem;text-align:center;">
     <img src="https://i.ibb.co/bMcN9hFV/trusted-reviewers.webp" alt="Trusted reviewers" style="width:100%;max-width:600px;border-radius:4px;border:1px solid rgba(255,255,255,0.06);" />
   </div>
 
-  <!-- Problems -->
   <div class="section-label">The real reason diets fail</div>
   <div class="problem-row">
     <div class="problem-cell">
@@ -718,7 +774,6 @@
 
   <hr class="div">
 
-  <!-- Product intro -->
   <div class="section-label">What I found</div>
   <div class="section-h">CitrusBurn — And Why I Was Skeptical First</div>
 
@@ -735,7 +790,6 @@
 
   <hr class="div">
 
-  <!-- Ingredients -->
   <div class="section-label">What's actually inside</div>
   <div class="section-h">The Ingredients — Plain English</div>
 
@@ -773,86 +827,11 @@
 
   <hr class="div">
 
-  <!-- Explainer Videos -->
   <div class="section-label">Explainer videos</div>
   <div class="section-h">See It For Yourself</div>
   <p class="body-text" style="margin-bottom:2rem;">Watch these short explainers before making any decision. No fluff — just the mechanism explained visually.</p>
 
-  <style>
-    @keyframes borderBeam {
-      0%   { background-position: 0% 50%; }
-      50%  { background-position: 100% 50%; }
-      100% { background-position: 0% 50%; }
-    }
-
-    .video-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 1.5rem;
-      margin-bottom: 2.5rem;
-    }
-
-    .video-wrap {
-      display: flex;
-      flex-direction: column;
-      gap: 10px;
-    }
-
-    .video-glow {
-      position: relative;
-      border-radius: 8px;
-      padding: 3px;
-      background: linear-gradient(270deg, #FFD700, #C9A84C, #fff6c0, #FFD700);
-      background-size: 400% 400%;
-      animation: borderBeam 3s ease infinite;
-    }
-
-    .video-inner {
-      border-radius: 6px;
-      overflow: hidden;
-      position: relative;
-      width: 100%;
-      height: 0;
-      padding-bottom: 56.25%;
-      background: #0E0E0D;
-    }
-
-    .video-inner iframe {
-      position: absolute;
-      top: 0; left: 0;
-      width: 100%; height: 100%;
-      border: 0;
-    }
-
-    .video-click-text {
-      text-align: center;
-      font-size: 0.75rem;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-      color: #C9A84C;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 6px;
-    }
-
-    .video-click-text::before,
-    .video-click-text::after {
-      content: '';
-      display: block;
-      width: 20px;
-      height: 1px;
-      background: #C9A84C;
-      opacity: 0.5;
-    }
-
-    @media (max-width: 580px) {
-      .video-grid { grid-template-columns: 1fr; }
-    }
-  </style>
-
   <div class="video-grid">
-
     <div class="video-wrap">
       <div class="video-glow">
         <div class="video-inner">
@@ -861,7 +840,6 @@
       </div>
       <div class="video-click-text">Click to watch</div>
     </div>
-
     <div class="video-wrap">
       <div class="video-glow">
         <div class="video-inner">
@@ -870,12 +848,10 @@
       </div>
       <div class="video-click-text">Click to watch</div>
     </div>
-
   </div>
 
   <hr class="div">
 
-  <!-- Verdict -->
   <div class="section-label">Honest assessment</div>
   <div class="section-h">What Works. What Doesn't.</div>
 
@@ -899,9 +875,8 @@
 
   <p class="body-text">After everything I read — the Biggest Loser data, the Harvard insulin research, the cortisol studies — this was the only thing I found asking the right questions. Not how do we suppress appetite. But <strong>how do we work with the metabolic system that years of dieting quietly damaged.</strong></p>
 
-  <!-- Final CTA -->
   <div class="final-cta">
-    <h3>Check INVEST NOW IN YOUR HEALTH</h3>
+    <h3>Check Current Pricing on the Official Site</h3>
     <p>The 60-day guarantee only applies to purchases from the official source. Third-party sellers can't honor it.</p>
     <a href="https://hop.clickbank.net/?affiliate=youraf1&vendor=citrusburn" class="cta-btn" target="_blank" rel="nofollow">
       Visit Official CitrusBurn Site
@@ -921,27 +896,18 @@
     <br>
     <p>© 2026 The Honest Shelf</p>
   </footer>
-
 </div>
 
 <script>
-  // Email collected — store it and reveal product
   function handleSubmit(e) {
     e.preventDefault();
     const email = document.getElementById('email-input').value;
-
-    // Store email in localStorage
     localStorage.setItem('ths_email', email);
     localStorage.setItem('ths_signup', new Date().toISOString());
-
-    // Hide step 1, show step 2
     document.getElementById('step-1').style.display = 'none';
     document.getElementById('step-2').classList.add('visible');
-
-    // Scroll to top
     window.scrollTo({ top: 0, behavior: 'smooth' });
 
-    // Send email to Brevo contact list
     fetch('https://api.brevo.com/v3/contacts', {
       method: 'POST',
       headers: {
@@ -956,7 +922,6 @@
     });
   }
 
-  // If already signed up, skip to step 2
   if (localStorage.getItem('ths_email')) {
     document.getElementById('step-1').style.display = 'none';
     document.getElementById('step-2').classList.add('visible');
