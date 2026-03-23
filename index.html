@@ -3,1017 +3,1028 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>The Honest Shelf — Free Weight Loss Guide</title>
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<title>Saarth Jain — The Honest Shelf Publication</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,400;1,700&family=DM+Sans:wght@300;400;500;600&family=DM+Mono:wght@300;400&display=swap" rel="stylesheet">
 <style>
-  @import url('https://fonts.cdnfonts.com/css/super-gt');
-
-  :root {
-    --yellow: #FFD700;
-    --yellow-dim: #C9A84C;
-    --bg: #0E0E0D;
-    --bg2: rgba(10,10,10,0.85);
-    --bg3: rgba(20,20,20,0.9);
-    --border: rgba(255,255,255,0.1);
-    --text: #FFFFFF;
-    --muted: #E8E0D0;
-    --super-gt: 'Super GT', 'Playfair Display', serif;
-  }
-
-  * { margin: 0; padding: 0; box-sizing: border-box; }
-  html { scroll-behavior: smooth; }
-
-  body {
-    background: linear-gradient(270deg, #6B2D7E, #A855A8, #D8B5E8, #8D3DA5);
-    background-size: 400% 400%;
-    animation: gradientShift 15s ease infinite;
-    background-attachment: fixed;
-    color: var(--text);
-    font-family: 'Super GT', 'DM Sans', sans-serif;
-    font-weight: 400;
-    line-height: 1.8;
-    overflow-x: hidden;
-    min-height: 100vh;
-  }
-
-  @keyframes gradientShift {
-    0% { background-position: 0% 50%; }
-    50% { background-position: 100% 50%; }
-    100% { background-position: 0% 50%; }
-  }
-
-  /* Grain */
-  body::after {
-    content: '';
-    position: fixed;
-    inset: 0;
-    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.035'/%3E%3C/svg%3E");
-    pointer-events: none;
-    z-index: 9999;
-  }
-
-  /* STEP 1 EMAIL GATE */
-  #step-1 {
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    padding: 2rem;
-    text-align: center;
-    position: relative;
-  }
-
-  #step-1::before {
-    content: '';
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 600px;
-    height: 600px;
-    background: radial-gradient(circle, rgba(255,215,0,0.06) 0%, transparent 70%);
-    pointer-events: none;
-  }
-
-  .brand {
-    font-family: var(--super-gt);
-    font-size: 1rem;
-    letter-spacing: 0.25em;
-    text-transform: uppercase;
-    color: var(--yellow);
-    margin-bottom: 3rem;
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    animation: fadeDown 0.6s ease both;
-    text-shadow: 0 0 20px rgba(255,215,0,0.3);
-  }
-
-  .brand::before, .brand::after {
-    content: '';
-    display: block;
-    width: 30px;
-    height: 1px;
-    background: var(--yellow);
-    opacity: 0.6;
-  }
-
-  .hero-wrap {
-    max-width: 600px;
-    animation: fadeUp 0.8s ease 0.1s both;
-  }
-
-  .badge {
-    display: inline-flex;
-    align-items: center;
-    gap: 6px;
-    background: rgba(255,215,0,0.12);
-    border: 1px solid rgba(255,215,0,0.3);
-    border-radius: 100px;
-    padding: 0.4rem 1.2rem;
-    font-size: 0.85rem;
-    letter-spacing: 0.1em;
-    text-transform: uppercase;
-    color: var(--yellow);
-    margin-bottom: 1.8rem;
-    font-family: var(--super-gt);
-  }
-
-  .badge-dot {
-    width: 7px;
-    height: 7px;
-    border-radius: 50%;
-    background: var(--yellow);
-    animation: pulse 2s ease infinite;
-  }
-
-  @keyframes pulse {
-    0%, 100% { opacity: 1; }
-    50% { opacity: 0.3; }
-  }
-
-  /* Hero heading stays as Playfair — per your instruction */
-  h1 {
-    font-family: 'Playfair Display', serif;
-    font-size: clamp(2rem, 6vw, 3.4rem);
-    font-weight: 900;
-    line-height: 1.12;
-    letter-spacing: -0.02em;
-    margin-bottom: 1.2rem;
-    color: #FFFFFF;
-    text-shadow: 0 2px 20px rgba(0,0,0,0.5);
-  }
-
-  h1 em {
-    font-style: italic;
-    color: var(--yellow);
-  }
-
-  .hero-sub {
-    font-size: 1.15rem;
-    color: #FFFFFF;
-    max-width: 480px;
-    margin: 0 auto 2.5rem;
-    line-height: 1.75;
-    text-shadow: 0 1px 8px rgba(0,0,0,0.6);
-    font-family: var(--super-gt);
-  }
-
-  /* Email form */
-  .email-form {
-    display: flex;
-    flex-direction: column;
-    gap: 12px;
-    max-width: 440px;
-    margin: 0 auto;
-  }
-
-  .input-row {
-    display: flex;
-    gap: 0;
-    border: 1.5px solid rgba(255,215,0,0.4);
-    border-radius: 4px;
-    overflow: hidden;
-    transition: border-color 0.2s;
-    box-shadow: 0 0 20px rgba(255,215,0,0.1);
-  }
-
-  .input-row:focus-within {
-    border-color: rgba(255,215,0,0.8);
-    box-shadow: 0 0 30px rgba(255,215,0,0.2);
-  }
-
-  .email-input {
-    flex: 1;
-    background: rgba(0,0,0,0.7);
-    border: none;
-    outline: none;
-    padding: 1.1rem 1.2rem;
-    font-family: var(--super-gt);
-    font-size: 1rem;
-    color: #FFFFFF;
-    font-weight: 400;
-  }
-
-  .email-input::placeholder { color: rgba(255,255,255,0.5); }
-
-  .submit-btn {
-    background: var(--yellow);
-    color: #111;
-    border: none;
-    padding: 1.1rem 1.6rem;
-    font-family: var(--super-gt);
-    font-size: 0.95rem;
-    font-weight: 700;
-    cursor: pointer;
-    white-space: nowrap;
-    letter-spacing: 0.05em;
-    transition: all 0.2s;
-    display: flex;
-    align-items: center;
-    gap: 6px;
-  }
-
-  .submit-btn:hover { background: #fff; }
-  .submit-btn:hover svg { transform: translateX(3px); }
-  .submit-btn svg { transition: transform 0.2s; }
-
-  .form-note {
-    font-size: 0.85rem;
-    color: rgba(255,255,255,0.7);
-    text-align: center;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 6px;
-    font-family: var(--super-gt);
-  }
-
-  /* Social proof */
-  .proof-strip {
-    margin-top: 3.5rem;
-    display: flex;
-    justify-content: center;
-    gap: 2.5rem;
-    flex-wrap: wrap;
-    animation: fadeUp 0.8s ease 0.3s both;
-  }
-
-  .proof-item {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 4px;
-  }
-
-  .proof-num {
-    font-family: var(--super-gt);
-    font-size: 1.7rem;
-    font-weight: 700;
-    color: var(--yellow);
-    line-height: 1;
-    text-shadow: 0 0 15px rgba(255,215,0,0.4);
-  }
-
-  .proof-label {
-    font-size: 0.8rem;
-    color: rgba(255,255,255,0.8);
-    letter-spacing: 0.05em;
-    text-align: center;
-    font-family: var(--super-gt);
-  }
-
-  .proof-divider {
-    width: 1px;
-    height: 40px;
-    background: rgba(255,255,255,0.2);
-    align-self: center;
-  }
-
-  /* WHAT YOU GET — redesigned as premium card grid */
-  .what-you-get {
-    margin-top: 4rem;
-    max-width: 500px;
-    margin-left: auto;
-    margin-right: auto;
-    animation: fadeUp 0.8s ease 0.4s both;
-  }
-
-  .wyg-title {
-    font-family: var(--super-gt);
-    font-size: 0.85rem;
-    letter-spacing: 0.2em;
-    text-transform: uppercase;
-    color: var(--yellow);
-    margin-bottom: 1.2rem;
-    text-align: center;
-    text-shadow: 0 0 15px rgba(255,215,0,0.3);
-  }
-
-  .wyg-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 10px;
-  }
-
-  .wyg-card {
-    background: rgba(0,0,0,0.6);
-    border: 1px solid rgba(255,215,0,0.2);
-    border-top: 2px solid var(--yellow);
-    border-radius: 4px;
-    padding: 1rem 1.1rem;
-    display: flex;
-    flex-direction: column;
-    gap: 6px;
-    transition: background 0.2s, border-color 0.2s;
-    backdrop-filter: blur(10px);
-  }
-
-  .wyg-card:hover {
-    background: rgba(0,0,0,0.75);
-    border-color: rgba(255,215,0,0.4);
-  }
-
-  .wyg-check {
-    color: var(--yellow);
-    font-size: 1.1rem;
-    line-height: 1;
-  }
-
-  .wyg-text {
-    font-family: var(--super-gt);
-    font-size: 0.88rem;
-    color: #FFFFFF;
-    line-height: 1.5;
-  }
-
-  /* STEP 2 */
-  #step-2 {
-    display: none;
-    min-height: 100vh;
-    padding: 4rem 2rem;
-    max-width: 720px;
-    margin: 0 auto;
-    animation: fadeUp 0.9s ease both;
-  }
-
-  #step-2.visible { display: block; }
-
-  /* All step 2 text gets dark semi-transparent backgrounds for readability */
-  .content-wrap {
-    background: rgba(0,0,0,0.65);
-    backdrop-filter: blur(12px);
-    border-radius: 8px;
-    padding: 2rem;
-    margin-bottom: 1.5rem;
-    border: 1px solid rgba(255,255,255,0.08);
-  }
-
-  .reveal-header {
-    text-align: center;
-    margin-bottom: 3rem;
-    background: rgba(0,0,0,0.6);
-    backdrop-filter: blur(12px);
-    border-radius: 8px;
-    padding: 2.5rem 2rem;
-    border: 1px solid rgba(255,255,255,0.08);
-  }
-
-  .reveal-header .badge { margin-bottom: 1.5rem; }
-
-  .reveal-header h2 {
-    font-family: 'Playfair Display', serif;
-    font-size: clamp(1.8rem, 5vw, 2.8rem);
-    font-weight: 900;
-    line-height: 1.15;
-    letter-spacing: -0.02em;
-    margin-bottom: 1rem;
-    color: #FFFFFF;
-  }
-
-  .reveal-header p {
-    font-size: 1.05rem;
-    color: rgba(255,255,255,0.85);
-    max-width: 500px;
-    margin: 0 auto;
-    font-family: var(--super-gt);
-  }
-
-  .problem-row {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-    gap: 10px;
-    margin: 2rem 0;
-  }
-
-  .problem-cell {
-    background: rgba(0,0,0,0.7);
-    backdrop-filter: blur(10px);
-    border: 1px solid rgba(255,255,255,0.08);
-    border-top: 2px solid var(--yellow);
-    padding: 1.5rem;
-    border-radius: 4px;
-    transition: background 0.2s;
-  }
-
-  .problem-cell:hover { background: rgba(0,0,0,0.85); }
-
-  .pc-num {
-    font-family: var(--super-gt);
-    font-size: 2rem;
-    font-weight: 700;
-    color: var(--yellow);
-    opacity: 0.5;
-    line-height: 1;
-    margin-bottom: 0.5rem;
-  }
-
-  .pc-title {
-    font-family: var(--super-gt);
-    font-size: 1rem;
-    font-weight: 700;
-    color: #FFFFFF;
-    margin-bottom: 0.5rem;
-  }
-
-  .pc-desc {
-    font-family: var(--super-gt);
-    font-size: 0.88rem;
-    color: rgba(255,255,255,0.8);
-    line-height: 1.6;
-  }
-
-  .pullquote {
-    border-left: 3px solid var(--yellow);
-    padding: 1rem 1.5rem;
-    margin: 2rem 0;
-    font-family: 'Playfair Display', serif;
-    font-style: italic;
-    font-size: 1.2rem;
-    color: #FFFFFF;
-    line-height: 1.6;
-    background: rgba(0,0,0,0.5);
-    backdrop-filter: blur(8px);
-    border-radius: 0 4px 4px 0;
-  }
-
-  .section-label {
-    font-family: var(--super-gt);
-    font-size: 0.82rem;
-    letter-spacing: 0.2em;
-    text-transform: uppercase;
-    color: var(--yellow);
-    margin-bottom: 0.8rem;
-    text-shadow: 0 0 10px rgba(255,215,0,0.3);
-  }
-
-  .section-h {
-    font-family: var(--super-gt);
-    font-size: clamp(1.5rem, 3.5vw, 2.1rem);
-    font-weight: 700;
-    line-height: 1.25;
-    margin-bottom: 1.2rem;
-    color: #FFFFFF;
-    text-shadow: 0 2px 10px rgba(0,0,0,0.4);
-  }
-
-  .body-text {
-    font-family: var(--super-gt);
-    font-size: 1rem;
-    color: rgba(255,255,255,0.9);
-    margin-bottom: 1rem;
-    line-height: 1.85;
-  }
-
-  .body-text strong { color: #FFFFFF; font-weight: 700; }
-
-  hr.div {
-    border: none;
-    border-top: 1px solid rgba(255,255,255,0.1);
-    margin: 2.5rem 0;
-  }
-
-  /* Ingredients */
-  .ingredient {
-    display: grid;
-    grid-template-columns: 160px 1fr;
-    gap: 1.5rem;
-    padding: 1.6rem;
-    border-bottom: 1px solid rgba(255,255,255,0.08);
-    align-items: start;
-    background: rgba(0,0,0,0.5);
-    backdrop-filter: blur(8px);
-    margin-bottom: 4px;
-    border-radius: 4px;
-  }
-
-  .ingredient:last-child { border-bottom: none; }
-
-  .ing-name {
-    font-family: var(--super-gt);
-    font-size: 1.05rem;
-    font-weight: 700;
-    color: var(--yellow);
-    line-height: 1.3;
-    text-shadow: 0 0 10px rgba(255,215,0,0.3);
-  }
-
-  .ing-sub {
-    font-family: var(--super-gt);
-    font-size: 0.75rem;
-    color: rgba(255,255,255,0.6);
-    margin-top: 3px;
-    letter-spacing: 0.06em;
-    text-transform: uppercase;
-  }
-
-  .ing-desc {
-    font-family: var(--super-gt);
-    font-size: 0.95rem;
-    color: rgba(255,255,255,0.88);
-    line-height: 1.7;
-  }
-
-  .ing-desc strong { color: #FFFFFF; font-weight: 700; }
-
-  /* Verdict */
-  .verdict-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 10px;
-    margin: 2rem 0;
-  }
-
-  .verdict-col {
-    background: rgba(0,0,0,0.65);
-    backdrop-filter: blur(10px);
-    border: 1px solid rgba(255,255,255,0.08);
-    padding: 1.5rem;
-    border-radius: 4px;
-  }
-
-  .vc-title {
-    font-family: var(--super-gt);
-    font-size: 0.82rem;
-    letter-spacing: 0.14em;
-    text-transform: uppercase;
-    font-weight: 700;
-    margin-bottom: 1rem;
-  }
-
-  .vc-title.good { color: #5CDB95; }
-  .vc-title.bad { color: rgba(255,255,255,0.6); }
-
-  .vc-item {
-    display: flex;
-    gap: 8px;
-    font-family: var(--super-gt);
-    font-size: 0.92rem;
-    color: rgba(255,255,255,0.85);
-    padding: 0.45rem 0;
-    line-height: 1.5;
-    align-items: flex-start;
-  }
-
-  .vc-item::before {
-    content: '—';
-    color: var(--yellow-dim);
-    flex-shrink: 0;
-  }
-
-  /* Final CTA */
-  .final-cta {
-    background: rgba(0,0,0,0.75);
-    backdrop-filter: blur(15px);
-    border: 1px solid rgba(255,215,0,0.2);
-    border-top: 3px solid var(--yellow);
-    padding: 3rem 2rem;
-    text-align: center;
-    margin: 2rem 0;
-    border-radius: 6px;
-    box-shadow: 0 0 40px rgba(255,215,0,0.08);
-  }
-
-  .final-cta h3 {
-    font-family: var(--super-gt);
-    font-size: clamp(1.3rem, 3vw, 1.9rem);
-    font-weight: 700;
-    margin-bottom: 0.8rem;
-    color: #FFFFFF;
-    letter-spacing: 0.05em;
-  }
-
-  .final-cta p {
-    font-family: var(--super-gt);
-    font-size: 0.95rem;
-    color: rgba(255,255,255,0.75);
-    margin-bottom: 2rem;
-    max-width: 400px;
-    margin-left: auto;
-    margin-right: auto;
-  }
-
-  .cta-btn {
-    display: inline-flex;
-    align-items: center;
-    gap: 8px;
-    background: var(--yellow);
-    color: #111;
-    font-family: var(--super-gt);
-    font-size: 1rem;
-    font-weight: 700;
-    padding: 1.2rem 3rem;
-    border-radius: 3px;
-    text-decoration: none;
-    letter-spacing: 0.05em;
-    transition: all 0.2s;
-    box-shadow: 0 0 30px rgba(255,215,0,0.3);
-  }
-
-  .cta-btn:hover {
-    background: #fff;
-    transform: translateY(-2px);
-    box-shadow: 0 0 40px rgba(255,255,255,0.3);
-  }
-
-  .guarantee-note {
-    font-family: var(--super-gt);
-    font-size: 0.82rem;
-    color: rgba(255,255,255,0.6);
-    margin-top: 1.2rem;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 6px;
-  }
-
-  /* Footer */
-  footer {
-    border-top: 1px solid rgba(255,255,255,0.1);
-    padding: 2rem;
-    text-align: center;
-    font-family: var(--super-gt);
-    font-size: 0.82rem;
-    color: rgba(255,255,255,0.6);
-    line-height: 1.9;
-    max-width: 600px;
-    margin: 0 auto;
-    background: rgba(0,0,0,0.4);
-    backdrop-filter: blur(8px);
-    border-radius: 4px;
-    margin-top: 2rem;
-  }
-
-  /* Video section */
-  @keyframes borderBeam {
-    0%   { background-position: 0% 50%; }
-    50%  { background-position: 100% 50%; }
-    100% { background-position: 0% 50%; }
-  }
-
-  .video-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 1.5rem;
-    margin-bottom: 2.5rem;
-  }
-
-  .video-wrap {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-  }
-
-  .video-glow {
-    position: relative;
-    border-radius: 8px;
-    padding: 3px;
-    background: linear-gradient(270deg, #FFD700, #C9A84C, #fff6c0, #FFD700);
-    background-size: 400% 400%;
-    animation: borderBeam 3s ease infinite;
-  }
-
-  .video-inner {
-    border-radius: 6px;
-    overflow: hidden;
-    position: relative;
-    width: 100%;
-    height: 0;
-    padding-bottom: 56.25%;
-    background: #0E0E0D;
-  }
-
-  .video-inner iframe {
-    position: absolute;
-    top: 0; left: 0;
-    width: 100%; height: 100%;
-    border: 0;
-  }
-
-  .video-click-text {
-    font-family: var(--super-gt);
-    text-align: center;
-    font-size: 0.82rem;
-    letter-spacing: 0.12em;
-    text-transform: uppercase;
-    color: var(--yellow);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 6px;
-  }
-
-  .video-click-text::before,
-  .video-click-text::after {
-    content: '';
-    display: block;
-    width: 20px;
-    height: 1px;
-    background: var(--yellow);
-    opacity: 0.5;
-  }
-
-  /* Animations */
-  @keyframes fadeUp {
-    from { opacity: 0; transform: translateY(24px); }
-    to { opacity: 1; transform: translateY(0); }
-  }
-
-  @keyframes fadeDown {
-    from { opacity: 0; transform: translateY(-12px); }
-    to { opacity: 1; transform: translateY(0); }
-  }
-
-  /* Mobile */
-  @media (max-width: 580px) {
-    .input-row { flex-direction: column; }
-    .submit-btn { width: 100%; justify-content: center; padding: 1rem; }
-    .proof-strip { gap: 1.5rem; }
-    .proof-divider { display: none; }
-    .verdict-grid { grid-template-columns: 1fr; }
-    .ingredient { grid-template-columns: 1fr; gap: 0.5rem; }
-    .final-cta { padding: 2rem 1.2rem; }
-    .video-grid { grid-template-columns: 1fr; }
-    .wyg-grid { grid-template-columns: 1fr; }
-  }
+:root {
+  --neon: #FF4500;
+  --orange: #FF6B00;
+  --bright: #FF8C00;
+  --light: #FFA040;
+  --ink: #1A0800;
+  --border: rgba(255,255,255,0.14);
+  --glass: rgba(0,0,0,0.22);
+  --glass2: rgba(0,0,0,0.35);
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+
+body {
+  background: linear-gradient(120deg, #FF4500, #FF6B00, #FFA040, #FF8C00, #FF5500, #FF3D00, #FFA500);
+  background-size: 600% 600%;
+  animation: gradientRoll 8s ease infinite;
+  color: #FFFFFF;
+  font-family: 'DM Sans', sans-serif;
+  font-weight: 400;
+  line-height: 1.7;
+  overflow-x: hidden;
+  min-height: 100vh;
+}
+
+@keyframes gradientRoll {
+  0%   { background-position: 0% 50%; }
+  25%  { background-position: 50% 0%; }
+  50%  { background-position: 100% 50%; }
+  75%  { background-position: 50% 100%; }
+  100% { background-position: 0% 50%; }
+}
+
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");
+  pointer-events: none;
+  z-index: 9999;
+}
+
+/* Top banner */
+.top-banner {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  z-index: 200;
+  text-align: center;
+  padding: 0.4rem 1rem;
+  background: rgba(0,0,0,0.45);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid rgba(255,255,255,0.1);
+  font-family: 'DM Mono', monospace;
+  font-size: 0.65rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.7);
+}
+
+.top-banner span {
+  color: rgba(255,255,255,0.95);
+  font-weight: 500;
+}
+
+/* Nav */
+nav {
+  position: fixed;
+  top: 28px; left: 0; right: 0;
+  padding: 1rem 3rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 100;
+  background: rgba(0,0,0,0.18);
+  backdrop-filter: blur(20px);
+  border-bottom: 1px solid var(--border);
+}
+
+.nav-logo {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: #FFFFFF;
+  text-decoration: none;
+  letter-spacing: 0.05em;
+  text-shadow: 0 2px 8px rgba(0,0,0,0.4);
+}
+
+.nav-links {
+  display: flex;
+  gap: 2rem;
+  list-style: none;
+}
+
+.nav-links a {
+  font-family: 'DM Mono', monospace;
+  font-size: 0.68rem;
+  color: rgba(255,255,255,0.8);
+  text-decoration: none;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  transition: color 0.2s;
+}
+
+.nav-links a:hover { color: #FFFFFF; }
+
+/* Hero */
+.hero {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 9rem 2rem 4rem;
+  position: relative;
+}
+
+.logo-wrap {
+  margin-bottom: 2rem;
+  animation: fadeDown 0.8s ease both;
+}
+
+.logo-img {
+  width: 160px;
+  height: 160px;
+  object-fit: cover;
+  border-radius: 8px;
+  box-shadow: 0 20px 60px rgba(0,0,0,0.35), 0 0 0 3px rgba(255,255,255,0.2);
+}
+
+.publication-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(0,0,0,0.28);
+  border: 1px solid rgba(255,255,255,0.22);
+  border-radius: 100px;
+  padding: 0.45rem 1.3rem;
+  font-family: 'DM Mono', monospace;
+  font-size: 0.7rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.92);
+  margin-bottom: 2rem;
+  animation: fadeDown 0.8s ease 0.1s both;
+  backdrop-filter: blur(10px);
+}
+
+.pub-dot {
+  width: 6px; height: 6px;
+  border-radius: 50%;
+  background: #FFFFFF;
+  animation: pulse 2s ease infinite;
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.4; transform: scale(0.8); }
+}
+
+.hero h1 {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(3.5rem, 9vw, 7rem);
+  font-weight: 900;
+  line-height: 1.02;
+  letter-spacing: -0.025em;
+  color: #FFFFFF;
+  text-shadow: 0 4px 40px rgba(0,0,0,0.35);
+  margin-bottom: 0.5rem;
+  animation: fadeUp 0.9s ease 0.2s both;
+}
+
+.hero h1 em {
+  font-style: italic;
+  color: var(--ink);
+  text-shadow: 0 4px 20px rgba(0,0,0,0.2);
+}
+
+.hero-role {
+  font-family: 'Playfair Display', serif;
+  font-style: italic;
+  font-size: clamp(1.3rem, 3vw, 2rem);
+  color: rgba(255,255,255,0.88);
+  margin-bottom: 1.5rem;
+  animation: fadeUp 0.9s ease 0.3s both;
+  text-shadow: 0 2px 12px rgba(0,0,0,0.25);
+}
+
+.hero-desc {
+  font-size: 1.08rem;
+  color: rgba(255,255,255,0.88);
+  max-width: 560px;
+  margin: 0 auto 3rem;
+  line-height: 1.82;
+  font-weight: 400;
+  animation: fadeUp 0.9s ease 0.4s both;
+  text-shadow: 0 1px 6px rgba(0,0,0,0.2);
+}
+
+.hero-actions {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  flex-wrap: wrap;
+  animation: fadeUp 0.9s ease 0.5s both;
+}
+
+.btn-dark {
+  background: rgba(0,0,0,0.7);
+  color: #FFFFFF;
+  font-family: 'DM Mono', monospace;
+  font-size: 0.78rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  padding: 1rem 2.2rem;
+  text-decoration: none;
+  border-radius: 3px;
+  transition: all 0.2s;
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255,255,255,0.12);
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-weight: 500;
+}
+
+.btn-dark:hover {
+  background: rgba(0,0,0,0.9);
+  transform: translateY(-2px);
+  box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+}
+
+.btn-light {
+  background: rgba(255,255,255,0.18);
+  color: #FFFFFF;
+  font-family: 'DM Mono', monospace;
+  font-size: 0.78rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  padding: 1rem 2.2rem;
+  text-decoration: none;
+  border-radius: 3px;
+  border: 1px solid rgba(255,255,255,0.32);
+  transition: all 0.2s;
+  backdrop-filter: blur(10px);
+  font-weight: 500;
+}
+
+.btn-light:hover {
+  background: rgba(255,255,255,0.28);
+  transform: translateY(-2px);
+}
+
+/* Stats strip */
+.stats-strip {
+  display: flex;
+  justify-content: center;
+  gap: 0;
+  margin-top: 4.5rem;
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+  background: rgba(0,0,0,0.18);
+  backdrop-filter: blur(10px);
+  animation: fadeUp 0.9s ease 0.6s both;
+  flex-wrap: wrap;
+  width: 100%;
+  max-width: 800px;
+}
+
+.stat-item {
+  padding: 1.5rem 2.5rem;
+  text-align: center;
+  border-right: 1px solid var(--border);
+  flex: 1;
+  min-width: 130px;
+}
+
+.stat-item:last-child { border-right: none; }
+
+.stat-num {
+  font-family: 'Playfair Display', serif;
+  font-size: 2.2rem;
+  font-weight: 900;
+  color: #FFFFFF;
+  line-height: 1;
+  text-shadow: 0 2px 12px rgba(0,0,0,0.25);
+}
+
+.stat-label {
+  font-family: 'DM Mono', monospace;
+  font-size: 0.63rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.65);
+  margin-top: 5px;
+}
+
+/* Section */
+.section {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 5.5rem 2rem;
+}
+
+.section-tag {
+  font-family: 'DM Mono', monospace;
+  font-size: 0.68rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.55);
+  margin-bottom: 2rem;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.section-tag::after {
+  content: '';
+  flex: 1;
+  height: 1px;
+  background: var(--border);
+}
+
+.section-title {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(2.5rem, 6vw, 4.5rem);
+  font-weight: 900;
+  line-height: 1.08;
+  color: #FFFFFF;
+  text-shadow: 0 4px 24px rgba(0,0,0,0.25);
+}
+
+.section-title em {
+  font-style: italic;
+  color: var(--ink);
+}
+
+.section-body {
+  font-size: 1.05rem;
+  color: rgba(255,255,255,0.88);
+  line-height: 1.85;
+  font-weight: 400;
+  max-width: 680px;
+  text-shadow: 0 1px 4px rgba(0,0,0,0.15);
+}
+
+/* Publication */
+.pub-intro {
+  background: var(--glass);
+  backdrop-filter: blur(15px);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 2.5rem;
+  margin-bottom: 1.5rem;
+  display: flex;
+  gap: 2.5rem;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.pub-logo-small {
+  width: 90px;
+  height: 90px;
+  object-fit: cover;
+  border-radius: 6px;
+  flex-shrink: 0;
+  box-shadow: 0 8px 30px rgba(0,0,0,0.3);
+}
+
+.pub-info h3 {
+  font-family: 'Playfair Display', serif;
+  font-size: 2rem;
+  font-weight: 900;
+  color: #FFFFFF;
+  margin-bottom: 0.3rem;
+  text-shadow: 0 2px 12px rgba(0,0,0,0.25);
+}
+
+.pub-tagline {
+  font-family: 'Playfair Display', serif;
+  font-style: italic;
+  font-size: 1rem;
+  color: rgba(255,255,255,0.65);
+  margin-bottom: 0.8rem;
+}
+
+.pub-info p {
+  font-size: 0.92rem;
+  color: rgba(255,255,255,0.82);
+  line-height: 1.75;
+  max-width: 500px;
+}
+
+.pub-date {
+  font-family: 'DM Mono', monospace;
+  font-size: 0.65rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.45);
+  margin-top: 0.8rem;
+}
+
+.view-pub-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  margin-top: 1.2rem;
+  background: rgba(255,255,255,0.12);
+  border: 1px solid rgba(255,255,255,0.22);
+  border-radius: 100px;
+  padding: 0.5rem 1.2rem;
+  font-family: 'DM Mono', monospace;
+  font-size: 0.68rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: #FFFFFF;
+  text-decoration: none;
+  transition: all 0.2s;
+}
+
+.view-pub-btn:hover {
+  background: rgba(255,255,255,0.22);
+  border-color: rgba(255,255,255,0.4);
+}
+
+/* Platform grid */
+.platform-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 1px;
+  background: var(--border);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  overflow: hidden;
+}
+
+.platform-card {
+  background: var(--glass);
+  backdrop-filter: blur(10px);
+  padding: 1.5rem;
+  transition: background 0.2s;
+  text-decoration: none;
+  color: inherit;
+  display: block;
+}
+
+.platform-card:hover { background: var(--glass2); }
+
+.platform-name {
+  font-family: 'DM Mono', monospace;
+  font-size: 0.68rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.55);
+  margin-bottom: 0.5rem;
+}
+
+.platform-desc {
+  font-size: 0.9rem;
+  color: rgba(255,255,255,0.88);
+  font-weight: 500;
+  line-height: 1.5;
+}
+
+.platform-status {
+  display: inline-block;
+  margin-top: 0.8rem;
+  font-family: 'DM Mono', monospace;
+  font-size: 0.6rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.45);
+  border: 1px solid rgba(255,255,255,0.15);
+  padding: 2px 8px;
+  border-radius: 20px;
+}
+
+.platform-status.live {
+  color: #7DFFB3;
+  border-color: rgba(125,255,179,0.3);
+  background: rgba(125,255,179,0.08);
+}
+
+/* Articles */
+.articles-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1px;
+  background: var(--border);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  overflow: hidden;
+}
+
+.article-card {
+  background: var(--glass);
+  backdrop-filter: blur(10px);
+  padding: 2rem;
+  transition: background 0.2s;
+  text-decoration: none;
+  color: inherit;
+  display: flex;
+  flex-direction: column;
+}
+
+.article-card:hover { background: var(--glass2); }
+
+.article-platform {
+  font-family: 'DM Mono', monospace;
+  font-size: 0.63rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.48);
+  margin-bottom: 0.8rem;
+}
+
+.article-title {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: #FFFFFF;
+  line-height: 1.35;
+  margin-bottom: 0.8rem;
+  text-shadow: 0 2px 8px rgba(0,0,0,0.2);
+  flex: 1;
+}
+
+.article-desc {
+  font-size: 0.88rem;
+  color: rgba(255,255,255,0.72);
+  line-height: 1.6;
+  margin-bottom: 1.2rem;
+}
+
+.read-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-family: 'DM Mono', monospace;
+  font-size: 0.65rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.7);
+  border: 1px solid rgba(255,255,255,0.18);
+  padding: 0.45rem 1rem;
+  border-radius: 100px;
+  transition: all 0.2s;
+  align-self: flex-start;
+}
+
+.read-btn:hover {
+  background: rgba(255,255,255,0.1);
+  color: #FFFFFF;
+  border-color: rgba(255,255,255,0.35);
+}
+
+/* Skills */
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1px;
+  background: var(--border);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  overflow: hidden;
+}
+
+.skill-card {
+  background: var(--glass);
+  backdrop-filter: blur(10px);
+  padding: 1.5rem;
+  transition: background 0.2s;
+}
+
+.skill-card:hover { background: var(--glass2); }
+
+.skill-name {
+  font-size: 1rem;
+  font-weight: 600;
+  color: #FFFFFF;
+  margin-bottom: 0.6rem;
+  text-shadow: 0 1px 4px rgba(0,0,0,0.2);
+}
+
+.skill-bar-bg {
+  height: 3px;
+  background: rgba(255,255,255,0.1);
+  border-radius: 2px;
+  margin-bottom: 0.5rem;
+  overflow: hidden;
+}
+
+.skill-bar {
+  height: 3px;
+  background: rgba(255,255,255,0.85);
+  border-radius: 2px;
+}
+
+.skill-label {
+  font-family: 'DM Mono', monospace;
+  font-size: 0.62rem;
+  color: rgba(255,255,255,0.48);
+  letter-spacing: 0.08em;
+}
+
+/* Timeline */
+.timeline { display: flex; flex-direction: column; }
+
+.tl-item {
+  display: grid;
+  grid-template-columns: 130px 1fr;
+  gap: 2rem;
+  padding: 2.2rem 0;
+  border-bottom: 1px solid var(--border);
+}
+
+.tl-item:last-child { border-bottom: none; }
+
+.tl-date {
+  font-family: 'DM Mono', monospace;
+  font-size: 0.7rem;
+  color: rgba(255,255,255,0.48);
+  letter-spacing: 0.06em;
+  padding-top: 6px;
+}
+
+.tl-title {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #FFFFFF;
+  margin-bottom: 0.3rem;
+  text-shadow: 0 2px 8px rgba(0,0,0,0.2);
+}
+
+.tl-role {
+  font-family: 'DM Mono', monospace;
+  font-size: 0.68rem;
+  color: rgba(255,255,255,0.52);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  margin-bottom: 0.8rem;
+}
+
+.tl-desc {
+  font-size: 0.92rem;
+  color: rgba(255,255,255,0.78);
+  line-height: 1.75;
+}
+
+/* Contact */
+.contact-block {
+  background: var(--glass2);
+  backdrop-filter: blur(20px);
+  border: 1px solid var(--border);
+  border-top: 2px solid rgba(255,255,255,0.3);
+  border-radius: 8px;
+  padding: 4rem 2rem;
+  text-align: center;
+  max-width: 1000px;
+  margin: 0 auto 4rem;
+}
+
+.contact-block h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(2.5rem, 6vw, 4.5rem);
+  font-weight: 900;
+  color: #FFFFFF;
+  margin-bottom: 1rem;
+  text-shadow: 0 4px 24px rgba(0,0,0,0.25);
+  line-height: 1.1;
+}
+
+.contact-block h2 em {
+  font-style: italic;
+  color: var(--ink);
+}
+
+.contact-block p {
+  font-size: 1rem;
+  color: rgba(255,255,255,0.72);
+  margin-bottom: 2rem;
+  max-width: 440px;
+  margin-left: auto;
+  margin-right: auto;
+  line-height: 1.75;
+}
+
+.contact-email {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.6rem;
+  font-style: italic;
+  color: #FFFFFF;
+  text-decoration: none;
+  border-bottom: 1px solid rgba(255,255,255,0.3);
+  padding-bottom: 4px;
+  display: inline-block;
+  margin-bottom: 2.5rem;
+  transition: border-color 0.2s;
+  text-shadow: 0 2px 12px rgba(0,0,0,0.2);
+}
+
+.contact-email:hover { border-color: #FFFFFF; }
+
+.social-row {
+  display: flex;
+  gap: 1.2rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.social-pill {
+  font-family: 'DM Mono', monospace;
+  font-size: 0.7rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.72);
+  text-decoration: none;
+  border: 1px solid rgba(255,255,255,0.22);
+  padding: 0.55rem 1.4rem;
+  border-radius: 100px;
+  transition: all 0.2s;
+  backdrop-filter: blur(10px);
+}
+
+.social-pill:hover {
+  background: rgba(255,255,255,0.12);
+  color: #FFFFFF;
+  border-color: rgba(255,255,255,0.42);
+}
+
+footer {
+  border-top: 1px solid var(--border);
+  padding: 1.5rem 3rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-family: 'DM Mono', monospace;
+  font-size: 0.62rem;
+  color: rgba(255,255,255,0.32);
+  letter-spacing: 0.08em;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  background: rgba(0,0,0,0.18);
+}
+
+/* Animations */
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(28px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeDown {
+  from { opacity: 0; transform: translateY(-16px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.reveal {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 0.7s ease, transform 0.7s ease;
+}
+
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+@media (max-width: 680px) {
+  nav { padding: 1rem 1.2rem; top: 24px; }
+  .nav-links { display: none; }
+  .hero { padding: 8rem 1.2rem 3rem; }
+  .stats-strip { flex-direction: column; }
+  .stat-item { border-right: none; border-bottom: 1px solid var(--border); }
+  .section { padding: 3.5rem 1.2rem; }
+  .pub-intro { flex-direction: column; }
+  .tl-item { grid-template-columns: 1fr; gap: 0.3rem; }
+  .contact-block { margin: 0 1.2rem 3rem; padding: 2.5rem 1.2rem; }
+  footer { padding: 1rem 1.2rem; }
+}
 </style>
 </head>
 <body>
 
-<!-- STEP 1 EMAIL GATE -->
-<div id="step-1">
-  <div class="brand">The Honest Shelf</div>
-  <div class="hero-wrap">
-    <div class="badge">
-      <span class="badge-dot"></span>
-      Free Guide — No Credit Card
-    </div>
-    <h1>The Morning Coffee Trick That's Helping Thousands <em>Finally</em> Lose Weight</h1>
-    <p class="hero-sub">Enter your email and I'll send you the free guide — plus the exact research-backed product making this possible. Takes 10 seconds.</p>
-    <form class="email-form" onsubmit="handleSubmit(event)">
-      <div class="input-row">
-        <input type="email" class="email-input" id="email-input" placeholder="Enter your best email address" required/>
-        <button type="submit" class="submit-btn">
-          Send It Free
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
-        </button>
-      </div>
-      <div class="form-note">
-        <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
-        No spam. Unsubscribe anytime. Your email is safe.
-      </div>
-    </form>
-  </div>
-
-  <!-- Social proof -->
-  <div class="proof-strip">
-    <div class="proof-item">
-      <div class="proof-num">3 Weeks</div>
-      <div class="proof-label">Of research<br>behind this</div>
-    </div>
-    <div class="proof-divider"></div>
-    <div class="proof-item">
-      <div class="proof-num">Harvard</div>
-      <div class="proof-label">Research<br>cited</div>
-    </div>
-    <div class="proof-divider"></div>
-    <div class="proof-item">
-      <div class="proof-num">60-Day</div>
-      <div class="proof-label">Money back<br>guarantee</div>
-    </div>
-    <div class="proof-divider"></div>
-    <div class="proof-item">
-      <div class="proof-num">$0</div>
-      <div class="proof-label">Cost to<br>get the guide</div>
-    </div>
-  </div>
-
-  <!-- What you get — redesigned as card grid -->
-  <div class="what-you-get">
-    <div class="wyg-title">What you get instantly</div>
-    <div class="wyg-grid">
-      <div class="wyg-card">
-        <span class="wyg-check">✦</span>
-        <span class="wyg-text">Free "Coffee Metabolism Guide" PDF — 3 things to add to your morning coffee</span>
-      </div>
-      <div class="wyg-card">
-        <span class="wyg-check">✦</span>
-        <span class="wyg-text">Harvard research on why your metabolism slowed — and how to fix it</span>
-      </div>
-      <div class="wyg-card">
-        <span class="wyg-check">✦</span>
-        <span class="wyg-text">The exact product I found after 3 weeks of research — with honest pros and cons</span>
-      </div>
-      <div class="wyg-card">
-        <span class="wyg-check">✦</span>
-        <span class="wyg-text">No hype. No brand deals. Just what I actually found.</span>
-      </div>
-    </div>
-  </div>
+<!-- Top banner -->
+<div class="top-banner">
+  <span>The Honest Shelf Publication</span> — Est. 18th March 2026
 </div>
 
-<!-- STEP 2 PRODUCT REVEAL -->
-<div id="step-2">
+<nav>
+  <a href="#" class="nav-logo">Saarth Jain</a>
+  <ul class="nav-links">
+    <li><a href="#publication">Publication</a></li>
+    <li><a href="#writing">Writing</a></li>
+    <li><a href="#skills">Skills</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+</nav>
 
-  <div class="reveal-header">
-    <div class="badge">
-      <span class="badge-dot"></span>
-      You're in — here's what I found
-    </div>
-    <h2>Why Your Body Has Been <em>Fighting Against</em> You This Whole Time</h2>
-    <p>And the one morning habit that finally works with it instead of against it.</p>
+<!-- Hero -->
+<section class="hero">
+  <div class="logo-wrap">
+    <img src="https://i.ibb.co/vBQ9Lxk3/Gemini-Generated-Image-gyhrg9gyhrg9gyhr.png" alt="The Honest Shelf" class="logo-img" onerror="this.style.display='none'"/>
   </div>
 
-  <!-- Trust image -->
-  <div style="margin:0 0 2rem;text-align:center;">
-    <img src="https://i.ibb.co/bMcN9hFV/trusted-reviewers.webp" alt="Trusted reviewers" style="width:100%;max-width:600px;border-radius:6px;border:1px solid rgba(255,215,0,0.2);box-shadow:0 0 30px rgba(0,0,0,0.4);" />
+  <div class="publication-tag">
+    <span class="pub-dot"></span>
+    Founder — The Honest Shelf Publication · Est. 18 March 2026
   </div>
 
-  <!-- Problems -->
-  <div class="section-label">The real reason diets fail</div>
-  <div class="problem-row">
-    <div class="problem-cell">
-      <div class="pc-num">01</div>
-      <div class="pc-title">Metabolic adaptation</div>
-      <div class="pc-desc">Every diet you've done trained your body to survive on less. Biggest Loser research showed metabolisms burning 499 fewer calories daily — 6 years later.</div>
-    </div>
-    <div class="problem-cell">
-      <div class="pc-num">02</div>
-      <div class="pc-title">Insulin resistance</div>
-      <div class="pc-desc">Harvard research shows repeated blood sugar spikes cause cells to ignore insulin. Glucose gets stored as fat while you feel exhausted and hungry simultaneously.</div>
-    </div>
-    <div class="problem-cell">
-      <div class="pc-num">03</div>
-      <div class="pc-title">Cortisol fat lock</div>
-      <div class="pc-desc">Chronic stress locks fat to your midsection deliberately. Undereating raises cortisol. The things you do to lose weight can make this worse.</div>
-    </div>
-  </div>
+  <h1>Saarth <em>Jain</em></h1>
+  <div class="hero-role">Health Research Writer & Content Publisher</div>
+  <p class="hero-desc">I translate complex obesity science, metabolic research, and supplement studies into plain English for Western health audiences. No hype. No brand deals. Just honest research published across the world's leading platforms.</p>
 
-  <div class="pullquote">"You were never out of control. Your hormones were running a program you didn't know existed."</div>
-
-  <p class="body-text">I spent three weeks reading published research before I found anything that addressed all three of these mechanisms together. Most supplements touch none of them. Then I found Citrus Burn — and the mechanism made sense in a way nothing else had.</p>
-
-  <hr class="div">
-
-  <!-- Product intro -->
-  <div class="section-label">What I found</div>
-  <div class="section-h">Citrus Burn — And Why I Was Skeptical First</div>
-
-  <div style="display:flex;gap:2rem;align-items:flex-start;flex-wrap:wrap;margin-bottom:1rem;">
-    <div style="flex:1;min-width:220px;">
-      <p class="body-text">My first reaction was dismissal. A powder you add to coffee. It immediately pattern-matched to everything I'd been reading about for weeks — overhyped, under-researched.</p>
-      <p class="body-text">Then I read the ingredient list instead of the marketing. The mechanism made sense. <strong>Certain compounds, when paired with caffeine specifically, work with your body's existing system rather than triggering its defenses.</strong> Caffeine is already part of your morning. The body expects it. Adding the right compounds sidesteps the adaptation response entirely.</p>
-    </div>
-    <div style="flex-shrink:0;width:200px;">
-      <img src="https://i.ibb.co/vvsxpRsK/6bottle-Thumb.jpg" alt="Citrus Burn bottles" style="width:100%;border-radius:6px;border:1px solid rgba(255,215,0,0.2);box-shadow:0 0 20px rgba(255,215,0,0.1);" />
-      <p style="font-family:'Super GT',sans-serif;font-size:0.78rem;color:rgba(255,255,255,0.6);text-align:center;margin-top:8px;letter-spacing:0.04em;">Citrus Burn — official supply</p>
-    </div>
-  </div>
-
-  <hr class="div">
-
-  <!-- Ingredients -->
-  <div class="section-label">What's actually inside</div>
-  <div class="section-h">The Ingredients — Plain English</div>
-
-  <div class="ingredient">
-    <div>
-      <div class="ing-name">L-Theanine</div>
-      <div class="ing-sub">Amino acid</div>
-    </div>
-    <div class="ing-desc">Blunts the cortisol spike caffeine alone creates. You get the metabolic benefit <strong>without the anxiety response</strong> that compounds the cortisol problem above.</div>
-  </div>
-
-  <div class="ingredient">
-    <div>
-      <div class="ing-name">Chlorogenic Acid</div>
-      <div class="ing-sub">Green coffee bean</div>
-    </div>
-    <div class="ing-desc">Slows glucose absorption. Gentler blood sugar rise. Less insulin released. <strong>Less fat storage from meals around your coffee.</strong> Interrupts the insulin cascade at the source.</div>
-  </div>
-
-  <div class="ingredient">
-    <div>
-      <div class="ing-name">Chromium</div>
-      <div class="ing-sub">Trace mineral</div>
-    </div>
-    <div class="ing-desc">Improves insulin sensitivity. Helps cells respond to insulin again. <strong>Deficiency is remarkably common</strong> and almost never discussed.</div>
-  </div>
-
-  <div class="ingredient">
-    <div>
-      <div class="ing-name">Green Tea Extract</div>
-      <div class="ing-sub">Thermogenic</div>
-    </div>
-    <div class="ing-desc">Gently raises metabolic rate <strong>without triggering the starvation alarm</strong> that makes adaptation worse.</div>
-  </div>
-
-  <hr class="div">
-
-  <!-- Explainer Videos -->
-  <div class="section-label">Explainer videos</div>
-  <div class="section-h">See It For Yourself</div>
-  <p class="body-text" style="margin-bottom:2rem;">Watch these short explainers before making any decision. No fluff — just the mechanism explained visually.</p>
-
-  <div class="video-grid">
-    <div class="video-wrap">
-      <div class="video-glow">
-        <div class="video-inner">
-          <iframe src="https://drive.google.com/file/d/1EN06K9ICuHJi_L9sjG2AsQgEZnFexQxQ/preview" allowfullscreen scrolling="no" allow="encrypted-media *;"></iframe>
-        </div>
-      </div>
-      <div class="video-click-text">Click to watch</div>
-    </div>
-    <div class="video-wrap">
-      <div class="video-glow">
-        <div class="video-inner">
-          <iframe src="https://drive.google.com/file/d/1Ja9VNcQwADCvDgKngjWe0c8FOmb6waGI/preview" allowfullscreen scrolling="no" allow="encrypted-media *;"></iframe>
-        </div>
-      </div>
-      <div class="video-click-text">Click to watch</div>
-    </div>
-  </div>
-
-  <hr class="div">
-
-  <!-- Verdict -->
-  <div class="section-label">Honest assessment</div>
-  <div class="section-h">What Works. What Doesn't.</div>
-
-  <div class="verdict-grid">
-    <div class="verdict-col">
-      <div class="vc-title good">Works in its favor</div>
-      <div class="vc-item">Tasteless — coffee unchanged</div>
-      <div class="vc-item">No new habit to remember</div>
-      <div class="vc-item">Addresses actual mechanisms</div>
-      <div class="vc-item">Real published research</div>
-      <div class="vc-item">60-day money back guarantee</div>
-    </div>
-    <div class="verdict-col">
-      <div class="vc-title bad">Be honest with yourself</div>
-      <div class="vc-item">It is not cheap</div>
-      <div class="vc-item">Won't fix a broken diet alone</div>
-      <div class="vc-item">Results vary individually</div>
-      <div class="vc-item">Only buy from official site</div>
-    </div>
-  </div>
-
-  <p class="body-text">After everything I read — the Biggest Loser data, the Harvard insulin research, the cortisol studies — this was the only thing I found asking the right questions. Not how do we suppress appetite. But <strong>how do we work with the metabolic system that years of dieting quietly damaged.</strong></p>
-
-  <!-- Final CTA -->
-  <div class="final-cta">
-    <h3>Invest Now In Your Health</h3>
-    <p>The 60-day guarantee only applies to purchases from the official source. Third-party sellers can't honor it.</p>
-    <a href="https://hop.clickbank.net/?affiliate=youraf1&vendor=citrusburn" class="cta-btn" target="_blank" rel="nofollow">
-      Visit Official Citrus Burn Site
-      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+  <div class="hero-actions">
+    <a href="mailto:saarthjain2306@gmail.com" class="btn-dark">
+      Get in touch
+      <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
     </a>
-    <div class="guarantee-note">
-      <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
-      60-day money back guarantee · Official site only
+    <a href="https://medium.com/@smartshelf" target="_blank" class="btn-light">View publication</a>
+  </div>
+
+  <div class="stats-strip">
+    <div class="stat-item">
+      <div class="stat-num">5+</div>
+      <div class="stat-label">Publishing platforms</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-num">Harvard</div>
+      <div class="stat-label">Research cited</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-num">0</div>
+      <div class="stat-label">Brand deals ever</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-num">Mar 2026</div>
+      <div class="stat-label">Founded</div>
+    </div>
+  </div>
+</section>
+
+<!-- Publication -->
+<section class="section reveal" id="publication">
+  <div class="section-tag">My publication</div>
+
+  <div class="pub-intro">
+    <img src="https://i.ibb.co/vBQ9Lxk3/Gemini-Generated-Image-gyhrg9gyhrg9gyhr.png" alt="The Honest Shelf Logo" class="pub-logo-small" onerror="this.style.display='none'"/>
+    <div class="pub-info">
+      <h3>The Honest Shelf</h3>
+      <div class="pub-tagline">Honest reviews. Real research. No hype.</div>
+      <p>An independent health research publication cutting through supplement marketing noise by going directly to peer-reviewed science — Harvard Medical School, Obesity Journal, American Journal of Clinical Nutrition — and translating it into plain English that everyday readers can act on.</p>
+      <div class="pub-date">Founded 18th March 2026 · Publishing across 5+ platforms</div>
+      <a href="https://medium.com/@smartshelf" target="_blank" class="view-pub-btn">
+        View on Medium
+        <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+      </a>
     </div>
   </div>
 
-  <footer>
-    <p style="font-family:'Super GT',sans-serif;font-size:1rem;color:#FFFFFF;margin-bottom:0.3rem;">The Honest Shelf</p>
-    <p>Honest reviews. Real research. No hype.</p>
-    <br>
-    <p><strong style="color:#FFFFFF">Affiliate Disclosure:</strong> This page contains affiliate links. If you purchase through our link we may earn a small commission at no extra cost to you. This does not influence our research or conclusions.</p>
-    <br>
-    <p>© 2026 The Honest Shelf</p>
-  </footer>
+  <div class="platform-grid">
+    <a href="https://medium.com/@smartshelf" target="_blank" class="platform-card">
+      <div class="platform-name">Medium</div>
+      <div class="platform-desc">Long-form research articles targeting Western health audiences</div>
+      <span class="platform-status live">Live</span>
+    </a>
+    <a href="https://thedailycompass.substack.com/" target="_blank" class="platform-card">
+      <div class="platform-name">Substack</div>
+      <div class="platform-desc">Weekly newsletter on metabolic health and supplement science</div>
+      <span class="platform-status live">Live</span>
+    </a>
+    <a href="https://bloogsterforyou.blogspot.com/2026/03/the-diet-trap-nobody-talks-published.html" target="_blank" class="platform-card">
+      <div class="platform-name">Blogger</div>
+      <div class="platform-desc">SEO-optimized product reviews indexed by Google</div>
+      <span class="platform-status live">Live</span>
+    </a>
+    <div class="platform-card">
+      <div class="platform-name">NewsBreak</div>
+      <div class="platform-desc">Health science content for 45M+ monthly US readers</div>
+      <span class="platform-status">Applying</span>
+    </div>
+    <div class="platform-card">
+      <div class="platform-name">Pinterest</div>
+      <div class="platform-desc">Visual health research content targeting US women 25–50</div>
+      <span class="platform-status live">Live</span>
+    </div>
+    <div class="platform-card">
+      <div class="platform-name">Instagram</div>
+      <div class="platform-desc">Short-form health research Reels for Western audiences</div>
+      <span class="platform-status live">Live</span>
+    </div>
+  </div>
+</section>
 
+<!-- Writing -->
+<section class="section reveal" id="writing">
+  <div class="section-tag">Published work</div>
+  <div class="section-title" style="margin-bottom:2rem;">Research that <em>reads.</em></div>
+
+  <div class="articles-grid">
+    <a href="https://medium.com/write-a-catalyst/the-diet-trap-nobody-talks-about-faf9b01496d2" target="_blank" class="article-card">
+      <div class="article-platform">Medium — The Honest Shelf</div>
+      <div class="article-title">The Diet Trap Nobody Talks About</div>
+      <div class="article-desc">A deep investigation into metabolic adaptation, insulin resistance, and cortisol — citing Harvard Medical School research and the Obesity Journal's landmark Biggest Loser study.</div>
+      <span class="read-btn">
+        Read on Medium
+        <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+      </span>
+    </a>
+    <a href="https://open.substack.com/pub/thedailycompass/p/nobody-told-me-this-about-weight?r=6lxe3x&utm_campaign=post&utm_medium=web&showWelcomeOnShare=true" target="_blank" class="article-card">
+      <div class="article-platform">Substack — The Honest Shelf</div>
+      <div class="article-title">Nobody Told Me This About Weight Loss. I Had to Find It Myself.</div>
+      <div class="article-desc">Why conventional dieting fails at a biological level — and what three weeks of published research revealed about the mechanisms nobody explains.</div>
+      <span class="read-btn">
+        Read on Substack
+        <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+      </span>
+    </a>
+    <a href="https://bloogsterforyou.blogspot.com/2026/03/the-diet-trap-nobody-talks-published.html" target="_blank" class="article-card">
+      <div class="article-platform">Blogger — The Honest Shelf</div>
+      <div class="article-title">The Diet Trap — Nobody Talks About This</div>
+      <div class="article-desc">An evidence-based breakdown of why weight loss fails — and the metabolic science behind what actually addresses it at the root.</div>
+      <span class="read-btn">
+        Read on Blogger
+        <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+      </span>
+    </a>
+  </div>
+</section>
+
+<!-- Skills -->
+<section class="section reveal" id="skills">
+  <div class="section-tag">What I bring</div>
+  <div class="section-title" style="margin-bottom:0.8rem;">Research-first. <em>Always.</em></div>
+  <p class="section-body" style="margin-bottom:2rem;">Every piece starts with published science — not opinions, trends, or sponsored talking points. I write for skeptical Western health audiences who have seen too much hype.</p>
+
+  <div class="skills-grid">
+    <div class="skill-card">
+      <div class="skill-name">Health research writing</div>
+      <div class="skill-bar-bg"><div class="skill-bar" style="width:95%"></div></div>
+      <div class="skill-label">Primary expertise</div>
+    </div>
+    <div class="skill-card">
+      <div class="skill-name">SEO content strategy</div>
+      <div class="skill-bar-bg"><div class="skill-bar" style="width:82%"></div></div>
+      <div class="skill-label">Keyword targeting & ranking</div>
+    </div>
+    <div class="skill-card">
+      <div class="skill-name">Landing page design</div>
+      <div class="skill-bar-bg"><div class="skill-bar" style="width:80%"></div></div>
+      <div class="skill-label">HTML / CSS — conversion focused</div>
+    </div>
+    <div class="skill-card">
+      <div class="skill-name">Affiliate marketing funnels</div>
+      <div class="skill-bar-bg"><div class="skill-bar" style="width:78%"></div></div>
+      <div class="skill-label">Email capture & bridge pages</div>
+    </div>
+    <div class="skill-card">
+      <div class="skill-name">Multi-platform publishing</div>
+      <div class="skill-bar-bg"><div class="skill-bar" style="width:88%"></div></div>
+      <div class="skill-label">Medium, Substack, Blogger & more</div>
+    </div>
+    <div class="skill-card">
+      <div class="skill-name">Social content creation</div>
+      <div class="skill-bar-bg"><div class="skill-bar" style="width:75%"></div></div>
+      <div class="skill-label">Instagram Reels & Pinterest</div>
+    </div>
+  </div>
+</section>
+
+<!-- Experience -->
+<section class="section reveal" id="experience">
+  <div class="section-tag">Experience</div>
+  <div class="timeline">
+    <div class="tl-item">
+      <div class="tl-date">Mar 2026 — Present</div>
+      <div>
+        <div class="tl-title">The Honest Shelf</div>
+        <div class="tl-role">Founder & Lead Researcher</div>
+        <div class="tl-desc">Built and launched an independent health research publication targeting Western audiences across 6 platforms. Created a complete affiliate marketing funnel with email capture, automated email sequences via Brevo, and multi-platform SEO content strategy. All research cites peer-reviewed journals including Harvard Medical School and the American Journal of Clinical Nutrition.</div>
+      </div>
+    </div>
+    <div class="tl-item">
+      <div class="tl-date">2026 — Present</div>
+      <div>
+        <div class="tl-title">Freelance Landing Page Designer</div>
+        <div class="tl-role">HTML / CSS Developer</div>
+        <div class="tl-desc">Designing high-converting affiliate marketing landing pages in pure HTML and CSS. Specializing in email capture funnels, animated UI elements, Brevo email integration, and mobile-responsive layouts hosted on GitHub Pages with Google Analytics.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Contact -->
+<div class="contact-block reveal" id="contact">
+  <h2>Let's work <em>together.</em></h2>
+  <p>Available for health research writing, contributor roles, and affiliate landing page projects. Response within 24 hours.</p>
+  <a href="mailto:saarthjain2306@gmail.com" class="contact-email">saarthjain2306@gmail.com</a>
+  <div class="social-row">
+    <a href="https://medium.com/@smartshelf" target="_blank" class="social-pill">The Honest Shelf</a>
+    <a href="mailto:saarthjain2306@gmail.com" class="social-pill">Email me</a>
+  </div>
 </div>
+
+<footer>
+  <span>© 2026 Saarth Jain — The Honest Shelf Publication · Est. 18 March 2026</span>
+  <span>Health Research Writer · Landing Page Designer</span>
+</footer>
 
 <script>
-  function handleSubmit(e) {
-    e.preventDefault();
-    const email = document.getElementById('email-input').value;
-    localStorage.setItem('ths_email', email);
-    localStorage.setItem('ths_signup', new Date().toISOString());
-    document.getElementById('step-1').style.display = 'none';
-    document.getElementById('step-2').classList.add('visible');
-    window.scrollTo({ top: 0, behavior: 'smooth' });
+const observer = new IntersectionObserver(entries => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) entry.target.classList.add('visible');
+  });
+}, { threshold: 0.08 });
 
-    fetch('https://api.brevo.com/v3/contacts', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-        'api-key': 'YOUR_NEW_BREVO_API_KEY'
-      },
-      body: JSON.stringify({
-        email: email,
-        listIds: [2],
-        updateEnabled: true
-      })
-    });
-  }
-
-  if (localStorage.getItem('ths_email')) {
-    document.getElementById('step-1').style.display = 'none';
-    document.getElementById('step-2').classList.add('visible');
-  }
+document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
 </script>
 
 </body>
