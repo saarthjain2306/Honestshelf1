@@ -899,32 +899,38 @@
 </div>
 
 <script>
+<!-- Include Forminit SDK -->
 <script src="https://forminit.com/sdk/v1/forminit.js"></script>
+
+<!-- Your Form -->
+<form id="contact-form">
+  <input type="email" name="fi-sender-email" placeholder="Email" required />
+  <textarea name="fi-text-message" placeholder="Message" required></textarea>
+  <button type="submit">Submit</button>
+</form>
+
+<div id="result"></div>
+
 <script>
   const forminit = new Forminit();
   const FORM_ID = "lo9h0s4dnqc";
 
   document.getElementById("contact-form").addEventListener("submit", async (e) => {
     e.preventDefault();
+
     const formData = new FormData(e.target);
     const { data, error } = await forminit.submit(FORM_ID, formData);
 
+    const result = document.getElementById("result");
+
     if (error) {
-      console.error(error.message);
+      result.textContent = error.message;
       return;
     }
 
-    localStorage.setItem('ths_email', e.target.querySelector('[name="fi-sender-email"]').value);
-    document.getElementById('step-1').style.display = 'none';
-    document.getElementById('step-2').classList.add('visible');
-    window.scrollTo({ top: 0, behavior: 'smooth' });
+    result.textContent = "Message sent successfully!";
+    e.target.reset();
   });
-
-  if (localStorage.getItem('ths_email')) {
-    document.getElementById('step-1').style.display = 'none';
-    document.getElementById('step-2').classList.add('visible');
-  }
-</script>
 </script>
 
 </body>
